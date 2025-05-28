@@ -1,0 +1,407 @@
+body {
+    margin: 0;
+    padding: 0;
+     scroll-behavior: auto; /* نعطل behavior العادي */
+}
+/* header */
+
+
+header {
+    background-image: url("../img/header.jpg");
+    min-height: 110vh;
+    background-size: cover;
+}
+.header-main-div {
+     min-height: 110vh;
+} 
+.logo-navbar {
+    width: 90px;
+    height: 90px;
+}
+.ar-en {
+    transition: color 0.5s linear;
+    left: 120px;
+    top: 40px;
+}
+.ar-en:hover {
+    
+color: white !important;
+}
+.navbar a {
+        transition: all 0.5s linear;
+
+}
+ /* to navbar on small screen */
+
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      background-color: #4175B0;
+      padding: 1rem;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s ease-in-out;
+      margin-top: 10px;
+    }
+
+    .navbar-nav .nav-item {
+      margin-bottom: 10px;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+      border-radius: 8px;
+      text-align: center;
+      padding: 10px;
+      font-size: 1.1rem;
+      transition: background 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+      background-color: #444;
+    }
+  }
+  /* end navbar */
+  /* first sectin in header */
+  .titleSetion h1{
+    font-size: 60px;
+  }
+    .titleSetion p{
+    font-size: 20px;
+  }
+  @media(max-width: 1200px) {
+    .titleSetion h1{
+    font-size: 40px;
+  
+  }
+  }
+   @media(max-width: 768px) {
+    .titleSetion h1,  .titleSetion p{
+  
+    text-align: center;
+  }
+  }
+
+  /* end header */
+  /* start main */
+  /* about */
+  .about {
+    background-color: #294568;
+  }
+  .about .heading-h2 {
+    font-size:42px ;
+  }
+    .about .title {
+      font-size: 18px;
+    }
+
+/* end about */
+/* start parallax-img */
+.parallax-container {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.parallax-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%; /* تغطية كافية عند التحريك */
+  object-fit: cover;
+  transform: translateY(0px);
+  transition: transform 0.05s linear;
+  z-index: -1;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1;
+  padding: 150px 40px;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+} .parallax-container {
+      position: relative;
+      height: 400px;        /* ارتفاع الـ div */
+      overflow: hidden;     /* يمنع ظهور أي شيء خارج */
+    }
+
+    .parallax-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200%;          /* الصورة أطول من div */
+      object-fit: cover;
+      transform: translateY(0);
+      will-change: transform;
+      transition: transform 0.1s ease-out;
+      z-index: -1;
+    }
+
+    .parallax-content {
+      position: relative;
+      z-index: 2;
+      padding: 140px 20px 20px;
+      text-align: center;
+      font-size: 1.8rem;
+      background: rgba(0, 0, 0, 0.4);
+    }
+/* end parallax-img */
+/* start service */
+.service {
+  background-color: #19375C;
+}
+
+.service  .heading-h2 {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.service  .heading-h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.service-card-v3 {
+  background-color: #3B5574;
+  min-height: 180px;
+}
+.service .arrow {
+  position: absolute;
+  right: 10px;
+  bottom: 40px;
+}
+  
+/* تأثير hover */
+.custom-hover {
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  border-radius: 10px;
+}
+
+.custom-hover:hover {
+  transform: scale(1.03); /* تكبير بسيط */
+  border-color: #4175b0;  /* بوردر عند التحويم */
+}
+/* end service */
+/* start Wataneyya */
+
+   .section {
+      position: relative;
+      overflow: hidden;
+      padding: 60px 20px;
+    }
+
+   
+    .container-5 {
+      max-width: 1200px;
+     
+      position: relative;
+      z-index: 2;
+    }
+
+    .heading-h2-2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .paragraph-9 {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .cta-image-v1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .cta-v1-cover-2 {
+      background-color: transparent;
+      background-image: linear-gradient(
+        90deg,
+        #10121a 31%,
+        #10121acc 50%,
+        #10121a99 59%,
+        #10121a00 68%
+      );
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 3;
+    }
+
+    .narrow {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .heading-h2-2 {
+        font-size: 2rem;
+      }
+
+      .paragraph-9 {
+        font-size: 1rem;
+      }
+    }
+    /* end Wataneyya */
+    /* start pargraph */
+    main .paragraphes {
+      background-color: #0F141E;
+    }
+    /* end pargraph */
+    /* start start Our Approach */ 
+     /* start Our Approach */
+/* start Our Approach */
+.Approach {
+  background-color: #19375C;
+  padding: 40px 20px; /* إضافة بعض الحواف الأفقية */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh; /* ارتفاع نسبي بدون استخدام 100vh */
+  flex-wrap: wrap;
+  color: white;
+}
+
+
+
+.Approach .start,
+.Approach .end {
+  flex: 1 1 45%; /* تأخذ تقريباً 45% من العرض، مع قابلية التصغير */
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.Approach .title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #F1F1F1;
+}
+
+.Approach h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.Approach p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #EEE;
+}
+
+.Approach .end img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .Approach .start,
+  .Approach .end {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  .Approach h2 {
+    font-size: 2rem;
+  }
+  .Approach p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .Approach {
+    padding: 30px 15px;
+  }
+  .Approach .title {
+    font-size: 1.1rem;
+  }
+  .Approach h2 {
+    font-size: 1.7rem;
+  }
+  .Approach p {
+    font-size: 0.95rem;
+  }
+}
+
+
+    /* end start Our Approach */
+
+    /* start   stages approach  */
+  .approach-Stages{
+      background-color: #19375C;
+  }
+  .approach-Stages .card {
+    background-color: #254164;
+    border-radius: 0px;
+    padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1)
+  }
+  .approach-Stages .card h3 {
+    color: #cbc8c8;
+  }
+  .approach-Stages .card p {
+    color: rgba(255, 255, 255, 0.86)
+;
+  }
+
+    /* end   stages approach  */
+    /* start section transform */
+        .transform {
+          background-color: #19375C;
+        }
+        .transform input,.transform textarea {
+          background-color: #395170;
+        }
+        input:focus,
+textarea:focus {
+  color: white !important;
+  background-color: #19375C !important; /* الخلفية تبقى بيضاء */
+}
+    /* end section transform */
+    /* start footer */
+ .footer {
+      background-color: #19375C;
+      padding: 40px 0;
+    }
+    .footer a {
+      text-decoration: none;
+      color: #212529;
+          transition: color 0.3s ease;
+    }
+    .footer a:hover {
+      color: #ffffff !important; 
+    }
+     .social-icon {
+    font-size: 1.2rem;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icon:hover {
+    color: #ffffff !important; /* يغير اللون إلى الأبيض الكامل عند المرور */
+  }
+
+
+
+
+    /* end foooter */
+  
