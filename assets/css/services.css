@@ -79,19 +79,33 @@ color: white !important;
   /* end header */
 
 
-    /* start section transform */
-        .transform {
+ /* start section contact */
+        .contact {
           background-color: #19375C;
         }
-        .transform input,.transform textarea {
+        .contact input,.contact textarea {
           background-color: #395170;
         }
-        input:focus,
-textarea:focus {
+       .contact input:focus,
+.contact textarea:focus {
   color: white !important;
   background-color: #19375C !important; /* الخلفية تبقى بيضاء */
 }
-    /* end section transform */
+.contact button[type="submit"] {
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact button[type="submit"]:hover {
+  background-color: #4175B0;
+  color: white;
+  box-shadow: 0 4px 12px rgba(65, 117, 176, 0.4);
+}
+    /* end section contact */
       /* start footer */
  .footer {
       background-color: #19375C;

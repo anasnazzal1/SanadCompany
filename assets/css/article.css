@@ -1,4 +1,6 @@
 body {
+    font-family: 'Segoe UI', sans-serif;
+
     margin: 0;
     padding: 0;
      background-color: #19375C;
@@ -133,4 +135,44 @@ color: white !important;
 
 
     /* end foooter */
+
+    /* start article  */
+
+    h1, h2 {
+  color: #fff;
+}
+.title-section {
+  background-color: #0078AA !important;
+}
+
+blockquote {
+  font-style: italic;
+  color: #ccc;
+  border-left: 4px solid #0d6efd;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.list-group-item {
+  background-color: #343a40;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.list-group-item.active {
+  background-color: white;
+  color: #343a40;
+}
+
+.list-group-item:hover {
+  background-color: white;
+}
+
+article {
+  border-bottom: 1px solid #555;
+  padding-bottom: 2rem;
+}
+/* end article */
   

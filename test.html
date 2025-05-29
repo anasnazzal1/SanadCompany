@@ -1,122 +1,96 @@
 <!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title>شركاؤنا</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<html lang="en" dir="ltr">
   <style>
     body {
-      direction: rtl;
-      background-color: #f8f9fa;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .partners-section {
-      padding: 60px 20px;
-      background-color: #fff;
-      text-align: center;
-    }
-    .partners-title {
-      font-size: 32px;
-      margin-bottom: 40px;
-      font-weight: bold;
-      color: #333;
-    }
-    .carousel-item {
-      padding: 20px 0;
-    }
-    .carousel-item .col {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .carousel-item img {
-      max-height: 80px;
-      width: auto;
-      filter: grayscale(100%);
-      transition: filter 0.3s;
-    }
-    .carousel-item img:hover {
-      filter: grayscale(0%);
-    }
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-color: #007bff;
-      border-radius: 50%;
-      padding: 15px;
-    }
-    .carousel-indicators li {
-      background-color: #007bff;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
+
+button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* العربية مخفية بشكل افتراضي */
+.lang-ar {
+  display: none;
+  text-align: right;
+  direction: rtl;
+}
+
+.lang-en {
+  display: block;
+  text-align: left;
+  direction: ltr;
+}
+
   </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-language Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <button id="langToggleBtn">🇸🇦 العربية</button>
 
-<section class="partners-section">
-  <h2 class="partners-title">شركاؤنا</h2>
+    <h1 class="lang-en">Welcome to My Website</h1>
+    <h1 class="lang-ar">مرحبًا بك في موقعي</h1>
 
-  <div id="partnersCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#partnersCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#partnersCarousel" data-slide-to="1"></li>
-    </ol>
+    <p class="lang-en">This is a simple multilingual website using JavaScript.</p>
+    <p class="lang-ar">هذا موقع متعدد اللغات باستخدام JavaScript.</p>
 
-    <!-- Slides -->
-    <div class="carousel-inner">
-
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <div class="row">
-          <div class="col-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="img-fluid" alt="Microsoft">
-          </div>
-          <div class="col-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Google_2015_logo.svg" class="img-fluid" alt="Google">
-          </div>
-          <div class="col-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" class="img-fluid" alt="Amazon">
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="row">
-          <div class="col-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" class="img-fluid" alt="Facebook">
-          </div>
-          <div class="col-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" class="img-fluid" alt="Apple">
-          </div>
-          <div class="col-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Logo_Tesla_Motors.svg" class="img-fluid" alt="Tesla">
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Controls -->
-    <a class="carousel-control-prev" href="#partnersCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">السابق</span>
-    </a>
-    <a class="carousel-control-next" href="#partnersCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">التالي</span>
-    </a>
+    <footer>
+      <p class="lang-en">Contact us at: example@example.com</p>
+      <p class="lang-ar">تواصل معنا على: example@example.com</p>
+    </footer>
   </div>
-</section>
 
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
+
+
+
+
+
+
+
+
+
+
+  
+<script>let currentLang = 'en';
+
+document.getElementById('langToggleBtn').addEventListener('click', () => {
+  if (currentLang === 'en') {
+    // التبديل إلى العربية
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.lang-ar').forEach(el => el.style.display = 'block');
+    document.getElementById('langToggleBtn').textContent = '🇬🇧 English';
+    currentLang = 'ar';
+  } else {
+    // التبديل إلى الإنجليزية
+    document.documentElement.lang = 'en';
+    document.documentElement.dir = 'ltr';
+    document.querySelectorAll('.lang-ar').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
+    document.getElementById('langToggleBtn').textContent = '🇸🇦 العربية';
+    currentLang = 'en';
+  }
+});
+</script>
+  <script src="script.js"></script>
 </body>
 </html>

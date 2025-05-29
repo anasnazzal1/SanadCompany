@@ -60,7 +60,7 @@ window.addEventListener('scroll', () => {
     event.preventDefault();
 
     const target = document.getElementById(targetId);
-    const offset = 80; // لتفادي تغطية الـ Navbar
+    const offset = 0; // لتفادي تغطية الـ Navbar
     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
@@ -83,3 +83,38 @@ window.addEventListener('scroll', () => {
 
     requestAnimationFrame(animation);
   }
+
+
+
+  // to change the photo in prodact
+    function changeMainImage(mainImageId, thumbnail) {
+    const mainImage = document.getElementById(mainImageId);
+    mainImage.src = thumbnail.src;
+    mainImage.alt = thumbnail.alt;
+
+    const thumbnailsContainer = thumbnail.parentElement;
+    [...thumbnailsContainer.children].forEach(img => img.classList.remove('active'));
+    thumbnail.classList.add('active');
+  }
+
+
+  // to filter catgry in article
+
+    function filterCategory(category) {
+  const articles = document.querySelectorAll('article');
+  articles.forEach(article => {
+    const cat = article.getAttribute('data-category');
+    article.style.display = (category === 'all' || cat === category) ? 'block' : 'none';
+  });
+
+  // Update active class
+  document.querySelectorAll('.list-group-item').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  const btnText = category === 'all' ? 'all' : category;
+  document.querySelectorAll('.list-group-item').forEach(btn => {
+    if (btn.textContent.toLowerCase().includes(btnText)) {
+      btn.classList.add('active');
+    }
+  });
+}
