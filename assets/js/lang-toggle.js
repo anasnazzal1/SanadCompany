@@ -38,6 +38,41 @@
 
 // assets/lang-toggle.js
 // assets/lang-toggle.js
+// document.addEventListener("DOMContentLoaded", function () {
+//   function setupLangToggle(toggleId) {
+//     const langToggle = document.getElementById(toggleId);
+//     if (!langToggle) return;
+
+//     const path = window.location.pathname;
+
+//     // تحديد اللغة الحالية من خلال المسار
+//     const isArabic = path.includes("/ar/");
+//     const currentLang = isArabic ? "ar" : "en";
+//     const newLang = isArabic ? "en" : "ar";
+
+//     // تحديث نص الزر
+//     langToggle.textContent = isArabic ? "English" : "العربية";
+
+//     langToggle.addEventListener("click", () => {
+//       let newPath;
+
+//       if (currentLang === "ar") {
+//         // من العربية إلى الإنجليزية
+//         newPath = "/index.html";
+//       } else {
+//         // من الإنجليزية إلى العربية
+//         newPath = "/ar/index.html";
+//       }
+
+//       window.location.href = newPath;
+//     });
+//   }
+
+//   // دعم لكل من الأزرار في الشاشات المختلفة
+//   setupLangToggle("langToggle");
+//   setupLangToggle("langToggle1");
+// });
+// assets/lang-toggle.js
 document.addEventListener("DOMContentLoaded", function () {
   function setupLangToggle(toggleId) {
     const langToggle = document.getElementById(toggleId);
@@ -45,30 +80,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const path = window.location.pathname;
 
-    // تحديد اللغة الحالية من خلال المسار
-    const isArabic = path.includes("/ar/");
+    // كشف اللغة من المسار النسبي (يحتوي على "ar/")
+    const isArabic = path.includes("ar/");
     const currentLang = isArabic ? "ar" : "en";
-    const newLang = isArabic ? "en" : "ar";
 
-    // تحديث نص الزر
+    // تغيير نص الزر
     langToggle.textContent = isArabic ? "English" : "العربية";
 
     langToggle.addEventListener("click", () => {
       let newPath;
 
       if (currentLang === "ar") {
-        // من العربية إلى الإنجليزية
-        newPath = "/index.html";
+        // من العربية إلى الإنجليزية (ملف موجود في المجلد الأعلى)
+        newPath = "../index.html";
       } else {
-        // من الإنجليزية إلى العربية
-        newPath = "/ar/index.html";
+        // من الإنجليزية إلى العربية (مجلد داخل المشروع)
+        newPath = "ar/index.html";
       }
 
       window.location.href = newPath;
     });
   }
 
-  // دعم لكل من الأزرار في الشاشات المختلفة
   setupLangToggle("langToggle");
   setupLangToggle("langToggle1");
 });
