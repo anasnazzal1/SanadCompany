@@ -24,7 +24,7 @@
     </a>
 
     <!-- زر اللغة (يوضع يسارًا دائمًا) -->
-    <button class="btn btn-sm btn-outline-light d-none d-lg-inline">العربية</button>
+    <button class="btn btn-sm btn-outline-light d-none d-lg-inline" id="langToggle">العربية</button>
 
     <!-- زر التوغّل للجوال -->
     <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
@@ -559,8 +559,8 @@
 </div>
  <!-- end parallax img -->
 
- <!-- start paranters -->
-<section id="partners" class="partners-section">
+<!-- start partners -->
+<section id="partners" class="partners-section text-center">
   <h2 class="partners-title">Our Partners</h2>
 
   <div id="partnersCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
@@ -568,12 +568,10 @@
     <div class="carousel-indicators mb-4">
       <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="الشريحة 1"></button>
       <button type="button" data-bs-target="#partnersCarousel" data-bs-slide-to="1" aria-label="الشريحة 2"></button>
-
     </div>
 
     <!-- Slides -->
     <div class="carousel-inner">
-
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="row mx-5">
@@ -590,7 +588,7 @@
       </div>
 
       <!-- Slide 2 -->
-      <div class="carousel-item ">
+      <div class="carousel-item">
         <div class="row mx-5">
           <div class="col-4">
             <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" class="img-fluid" alt="Apple">
@@ -603,8 +601,6 @@
           </div>
         </div>
       </div>
-       
-
     </div>
 
     <!-- Controls -->
@@ -617,10 +613,14 @@
       <span class="visually-hidden">التالي</span>
     </button>
   </div>
+
+  <!-- Join Our Partners Button -->
+  <div class="mt-5">
+    <a href="#contact" class="btn btn-outline-light btn-lg   ">Join Our Partners</a>
+  </div>
 </section>
+<!-- end partners -->
 
-
- <!-- end parenters -->
  
       <!--start blog section-->
 <div class="blog-section  py-5">
