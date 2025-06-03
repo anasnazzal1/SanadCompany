@@ -8,7 +8,9 @@ body {
 
 /* header */
 
- 
+ .navbar {
+    background-color: #4175B0;
+}
 .logo-navbar {
     width: 90px;
     height: 90px;
@@ -30,10 +32,8 @@ color: white !important;
 
   @media (max-width: 991.98px) {
     .navbar-collapse {
-      background-color: #4175B0;
       padding: 1rem;
       border-radius: 0 0 12px 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       transition: all 0.4s ease-in-out;
       margin-top: 10px;
     }
@@ -107,8 +107,8 @@ color: white !important;
 }
     /* end section contact */
       /* start footer */
- .footer {
-      background-color: #19375C;
+  .footer {
+      background-color: #4175B0;
       padding: 40px 0;
     }
     .footer a {
