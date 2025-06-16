@@ -429,3 +429,4 @@ C:\Users\Anas nazzal\Desktop\Sanad-main\Backend\Sanad\Sanad\obj\Debug\net8.0\ref
 C:\Users\Anas nazzal\Desktop\Sanad-main\Backend\Sanad\Sanad\obj\Debug\net8.0\Sanad.pdb
 C:\Users\Anas nazzal\Desktop\Sanad-main\Backend\Sanad\Sanad\obj\Debug\net8.0\Sanad.genruntimeconfig.cache
 C:\Users\Anas nazzal\Desktop\Sanad-main\Backend\Sanad\Sanad\obj\Debug\net8.0\ref\Sanad.dll
+C:\Users\Anas nazzal\Desktop\Sanad-main\Backend\Sanad\Sanad\obj\Debug\net8.0\Sanad.sourcelink.json

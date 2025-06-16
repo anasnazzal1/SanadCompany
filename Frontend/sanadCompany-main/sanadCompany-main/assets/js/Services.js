@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <a href="services.html" class="service-card-v3 hover-service-card d-block p-4 text-white-50 h-100 shadow-sm custom-hover text-decoration-none position-relative">
             <h3 class="heading-h3 mb-3">${service.title}</h3>
             <p>${service.description}</p>
-            <img src="./assets/img/arrow.png" alt="Arrow" class="arrow" width="30" />
           </a>
         `;
         container.appendChild(col);
