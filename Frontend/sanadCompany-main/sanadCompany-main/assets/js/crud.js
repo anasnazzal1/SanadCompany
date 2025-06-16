@@ -264,18 +264,79 @@ function loadCategories() {
     });
 }
 
+
+const thumbnailsInput = document.getElementById("thumbnailsInput");
+const thumbnailsPreview = document.getElementById("thumbnailsPreview");
+const mainImageSelector = document.getElementById("mainImageSelector");
+let selectedMainIndex = null;
+
+thumbnailsInput.addEventListener("change", () => {
+  const files = Array.from(thumbnailsInput.files);
+
+  if (files.length > 3) {
+    alert("يمكنك اختيار حتى 3 صور فقط.");
+    thumbnailsInput.value = "";
+    thumbnailsPreview.innerHTML = "";
+    mainImageSelector.innerHTML = "";
+    selectedMainIndex = null;
+    return;
+  }
+
+  thumbnailsPreview.innerHTML = "";
+  mainImageSelector.innerHTML = "";
+  selectedMainIndex = null;
+
+  files.forEach((file, i) => {
+    const url = URL.createObjectURL(file);
+
+    // عرض في المعاينة
+    const imgPreview = document.createElement("img");
+    imgPreview.src = url;
+    imgPreview.style.width = "80px";
+    imgPreview.style.height = "80px";
+    imgPreview.style.objectFit = "cover";
+    imgPreview.classList.add("border", "rounded");
+    thumbnailsPreview.appendChild(imgPreview);
+
+    // اختيار الصورة الرئيسية
+    const label = document.createElement("label");
+    label.className = "position-relative";
+
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "mainImageRadio";
+    radio.value = i;
+    radio.style.position = "absolute";
+    radio.style.top = "5px";
+    radio.style.left = "5px";
+    radio.required = true;
+
+    radio.addEventListener("change", () => {
+      selectedMainIndex = i;
+    });
+
+    label.appendChild(radio);
+
+    const imgMain = document.createElement("img");
+    imgMain.src = url;
+    imgMain.style.width = "80px";
+    imgMain.style.height = "80px";
+    imgMain.style.objectFit = "cover";
+    imgMain.classList.add("border", "rounded");
+
+    label.appendChild(imgMain);
+    mainImageSelector.appendChild(label);
+  });
+});
+
 const createProductForm = document.getElementById("createProductForm");
 createProductForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  if (selectedMainIndex === null) {
-    alert("يرجى اختيار الصورة الرئيسية من الصور المصغرة.");
-    return;
-  }
-
   const form = createProductForm;
   const data = new FormData();
 
+  // الحقول النصية
   data.append("Title", form.Title.value);
   data.append("Description", form.Description.value);
   data.append("LongDescription", form.LongDescription.value);
@@ -286,13 +347,28 @@ createProductForm.addEventListener("submit", function (e) {
   data.append("DetailsLink", form.DetailsLink.value);
   data.append("DemoLink", form.DemoLink.value);
 
+  // الصور
   const files = Array.from(thumbnailsInput.files);
+  if (files.length === 0) {
+    alert("يرجى اختيار الصور المصغرة واختيار واحدة كصورة رئيسية.");
+    return;
+  }
+
+  if (selectedMainIndex === null || selectedMainIndex >= files.length) {
+    alert("يرجى اختيار الصورة الرئيسية.");
+    return;
+  }
+
+  // إضافة الصورة الرئيسية
+  const mainImageFile = files[selectedMainIndex];
+  data.append("ImageUrl", mainImageFile);
+
+  // إضافة جميع الصور كمصغرات (بما في ذلك الصورة الرئيسية)
   files.forEach((file) => {
     data.append("Thumbnails", file);
   });
 
-  data.append("ImageUrl", files[selectedMainIndex]);
-
+  // إرسال الطلب
   axios
     .post(`${productApi}/CreateProduct`, data)
     .then(() => {
@@ -302,12 +378,16 @@ createProductForm.addEventListener("submit", function (e) {
       mainImageSelector.innerHTML = "";
       selectedMainIndex = null;
       loadProducts();
+      alert("✅ تم إضافة المنتج بنجاح!");
     })
     .catch((err) => {
-      alert("حدث خطأ أثناء الإضافة");
+      alert("❌ حدث خطأ أثناء الإضافة:\n" + (err.response?.data || err.message));
       console.error(err);
     });
 });
+
+
+
 
     // لتحميل البيانات عند بداية الصفحة
     loadServices();
